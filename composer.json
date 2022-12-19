@@ -1,0 +1,32 @@
+{
+    "name": "axn/laravel-revert-db-default-string-length",
+    "description": "Revert database default string length to 255 in a Laravel project",
+    "homepage": "https://github.com/AXN-Informatique/laravel-revert-db-default-string-length",
+    "support": {
+        "issues": "https://github.com/AXN-Informatique/laravel-revert-db-default-string-length/issues"
+    },
+    "authors": [{
+            "name": "AXN Informatique",
+            "email": "developpement@axn.fr"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0 || ^9.0",
+        "illuminate/database": "^8.0 || ^9.0",
+        "doctrine/dbal": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Axn\\RevertDbDefaultStringLength\\": "src/"
+        }
+    },
+    "extra" : {
+        "laravel" : {
+            "providers" : [
+                "Axn\\RevertDbDefaultStringLength\\ServiceProvider"
+            ]
+        }
+    }
+}
