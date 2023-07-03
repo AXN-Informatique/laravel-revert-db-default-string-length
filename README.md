@@ -49,3 +49,5 @@ So you can incorporate it into your deployment workflow with:
 ```
 php artisan migrate
 ```
+
+Remember to remove `Schema::defaultStringLength(191);` from your AppServiceProvider file.
