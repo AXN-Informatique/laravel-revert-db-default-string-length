@@ -1,11 +1,6 @@
 Laravel revert DB default string length
 =======================================
 
-    --------------------------------------
-    /!\ UNFINISHED Do not use at this time
-    --------------------------------------
-
-
 This package revert database default string length to 255 characters in a Laravel project. It transforms all VARCHAR(191) columns to 255 characters.
 
 This is especially useful for old projects that need to be updated.
@@ -18,12 +13,6 @@ Schema::defaultStringLength(191);
 ```
 
 As a result, this package will be of great help to you to modernize an old application.
-
-It proceeds in **X** steps:
-
-1. ...
-2. ...
-3. ...
 
 Instalation
 -----------

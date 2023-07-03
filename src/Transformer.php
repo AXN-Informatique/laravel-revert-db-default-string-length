@@ -29,6 +29,9 @@ class Transformer
         $this->connection = $connection;
         $this->doctrineSchemaManager = $connection->getDoctrineSchemaManager();
         $this->schemaBuilder = $connection->getSchemaBuilder();
+
+        // Prevention of errors in the presence of enum type columns
+        $this->connection->getDoctrineConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
     }
 
     /**
@@ -42,13 +45,6 @@ class Transformer
         $this->command = $command;
     }
 
-    /**
-     * 1) ...
-     * 2) ...
-     * 3) ...
-     *
-     * @return void
-     */
     public function transform()
     {
         $this->extractSchemaInfos();
@@ -66,13 +62,6 @@ class Transformer
         }
     }
 
-    /**
-     * On each table :
-     * 1) ...
-     * 2) ...
-     *
-     * @return void
-     */
     protected function extractSchemaInfos()
     {
         $this->stringColumnsInfo = [];
@@ -88,7 +77,6 @@ class Transformer
                     'column' => $column->getName(),
                     'nullable' => ! $column->getNotnull(),
                     'default' => $column->getDefault(),
-                    'autoIncrement' => $column->getAutoincrement(),
                 ];
             }
         }
